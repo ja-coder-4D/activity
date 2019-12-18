@@ -7,9 +7,6 @@ import org.junit.Test;
 public class TestActivity {
   
 
-	
-
-
 
 	private ProcessEngine processEngine;
 
