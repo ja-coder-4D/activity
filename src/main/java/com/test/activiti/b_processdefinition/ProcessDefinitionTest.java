@@ -19,6 +19,7 @@ import org.junit.Test;
 public class ProcessDefinitionTest {
 	ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 
+	
 	/**
 	 * 流程部署定义 classpath
 	 */
