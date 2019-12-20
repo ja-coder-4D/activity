@@ -27,9 +27,9 @@ public class HelloWorld {
     	             .addClasspathResource("diagrams/helloworld.bpmn")
     	             .addClasspathResource("diagrams/helloworld.png")
     	             .deploy();
-    	System.out.println("deployment.getId()"+deployment.getId());
+    	System.out.println("流程部署ID deployment.getId()"+deployment.getId());
     	System.out.println("deployment.getCategory()"+deployment.getCategory());
-    	System.out.println("deployment.getName()"+deployment.getName());
+    	System.out.println("流程部署名字 deployment.getName()"+deployment.getName());
     	System.out.println("deployment.getClass()"+deployment.getClass());
     	System.out.println("deployment.getDeploymentTime()"+deployment.getDeploymentTime());
 	}
