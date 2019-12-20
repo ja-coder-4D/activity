@@ -19,14 +19,12 @@ import org.junit.Test;
 public class ProcessDefinitionTest {
 	ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 
-	
 	/**
 	 * 流程部署定义 classpath
 	 */
 	@Test
 	public void prcessDefinition_ClassPathTest() {
-		Deployment deploy = processEngine.getRepositoryService()
-				.createDeployment().name("流程定义")
+		Deployment deploy = processEngine.getRepositoryService().createDeployment().name("流程定义")
 				.addClasspathResource("diagrams/helloworld.bpmn").addClasspathResource("diagrams/helloworld.bpmn")
 				.name("流程定义_ClASSPATH").deploy();
 		System.out.println("流程部署ID : " + deploy.getId());
@@ -39,8 +37,7 @@ public class ProcessDefinitionTest {
 	@Test
 	public void processDefinition_ZipTest() {
 		InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("diagrams/helloworld.zip");
-		Deployment deploy = processEngine.getRepositoryService()
-				.createDeployment()
+		Deployment deploy = processEngine.getRepositoryService().createDeployment()
 				.addZipInputStream(new ZipInputStream(inputStream)).name("流程定义_ZIP").deploy();
 		System.out.println("流程定义ID : " + deploy.getId());
 		System.out.println("流程名称  : " + deploy.getName());
@@ -135,10 +132,14 @@ public class ProcessDefinitionTest {
 		if (pDefinitions != null && pDefinitions.size() > 0) {
 			for (ProcessDefinition processDefinition : pDefinitions) {
 				System.out.println("******************************************");
-				System.out.println("流程定义ID : " + processDefinition.getId()); // 流程定义的key+版本 +  随机数
+				System.out.println("流程定义ID : " + processDefinition.getId()); // 流程定义的key+版本
+																				// +
+																				// 随机数
 				System.out.println("流程定义的名称  : " + processDefinition.getName());// 对应helloworld.bpmn文件中的name属性值
 				System.out.println("流程定义的key : " + processDefinition.getKey());// 对应helloworld.bpmn文件中的id属性值
-				System.out.println("流程定义的版本 : " + processDefinition.getVersion());// 当流程定义的key相同时版本升级 // 默认为1
+				System.out.println("流程定义的版本 : " + processDefinition.getVersion());// 当流程定义的key相同时版本升级
+																					// //
+																					// 默认为1
 				System.out.println("资源名称bpmn文件 : " + processDefinition.getResourceName());
 				System.out.println("资源名称png文件 : " + processDefinition.getDiagramResourceName());
 				System.out.println("部署对象ID : " + processDefinition.getDeploymentId());
@@ -152,10 +153,8 @@ public class ProcessDefinitionTest {
 	@Test
 	public void deleteProcessDefinitionBykeyTest() {
 		String processDefinitionKey = "helloworld";
-		List<ProcessDefinition> processDefinitions = processEngine.getRepositoryService()
-										.createProcessDefinitionQuery()
-										.processDefinitionKey(processDefinitionKey)
-										.list();
+		List<ProcessDefinition> processDefinitions = processEngine.getRepositoryService().createProcessDefinitionQuery()
+				.processDefinitionKey(processDefinitionKey).list();
 		if (processDefinitions != null && processDefinitions.size() > 0) {
 			for (ProcessDefinition processDefinition : processDefinitions) {
 				processEngine.getRepositoryService().deleteDeployment(processDefinition.getDeploymentId(), true);
