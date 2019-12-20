@@ -24,8 +24,8 @@ public class ProcessInstanceTest {
 		InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("diagrams/helloworld.zip");
 		Deployment deployment = processEngine.getRepositoryService().createDeployment().name("流程定义")
 				.addZipInputStream(new ZipInputStream(inputStream)).deploy();
-		System.out.println("流程定义ID : " + deployment.getId());
-		System.out.println("流程定义名称 : " + deployment.getName());
+		System.out.println("流程部署ID : " + deployment.getId());
+		System.out.println("流程部署名称 : " + deployment.getName());
 	}
 
 	/** 启动流程 */
