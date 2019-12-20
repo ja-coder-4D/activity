@@ -28,8 +28,8 @@ public class ProcessDefinitionTest {
 				.createDeployment().name("流程定义")
 				.addClasspathResource("diagrams/helloworld.bpmn").addClasspathResource("diagrams/helloworld.bpmn")
 				.name("流程定义_ClASSPATH").deploy();
-		System.out.println("流程定义ID : " + deploy.getId());
-		System.out.println("流程名称  : " + deploy.getName());
+		System.out.println("流程部署ID : " + deploy.getId());
+		System.out.println("流程部署名称  : " + deploy.getName());
 	}
 
 	/**
