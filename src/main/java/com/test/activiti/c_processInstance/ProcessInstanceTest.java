@@ -16,6 +16,7 @@ import org.junit.Test;
 
 public class ProcessInstanceTest {
 
+	
 	ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 
 	/** Á÷³Ì²¿Êð */
