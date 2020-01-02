@@ -43,7 +43,7 @@ public class ReceiveTaskTest {
 		Execution execution1 = processEngine.getRuntimeService()
 		             .createExecutionQuery()
 		             .processInstanceId(startProcessInstance.getId())
-		             .activityId("receivetask1")//当前活动的id，对应receiveTask.bpmn文件中的活动节点id的属性值
+		             .activityId("receivetask1")// 当前活动的id，对应receiveTask.bpmn文件中的活动节点id的属性值
 		             .singleResult();
 		/**使用流程变量设置当日销售额，用来传递业务参数*/
 		processEngine.getRuntimeService().setVariable(execution1.getId(), "当月销售额", 210000);
@@ -53,7 +53,7 @@ public class ReceiveTaskTest {
 		Execution execution2 = processEngine.getRuntimeService()
 		             .createExecutionQuery()
 		             .processInstanceId(startProcessInstance.getId())
-		             .activityId("receivetask2")//当前活动的id，对应receiveTask.bpmn文件中的活动节点id的属性值
+		             .activityId("receivetask2")// 当前活动的id，对应receiveTask.bpmn文件中的活动节点id的属性值
 		             .singleResult();
 		/**从流程变量中获取汇总当日销售额的值*/
 		Integer value = (Integer)processEngine.getRuntimeService()//
