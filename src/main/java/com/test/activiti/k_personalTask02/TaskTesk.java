@@ -41,7 +41,7 @@ public class TaskTesk {
 	/**查询本人的任务*/
 	@Test
 	public void findMyPersonTaskTest(){
-		String assignee = "";
+		String assignee = "宝宝";
 		List<Task> list = processEngine.getTaskService().createTaskQuery().taskAssignee(assignee).list();
 		if (list != null && list.size() > 0) {
 			for (Task task : list) {
