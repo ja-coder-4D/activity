@@ -53,7 +53,7 @@ public class ReceiveTaskTest {
 		Execution execution2 = processEngine.getRuntimeService()
 		             .createExecutionQuery()
 		             .processInstanceId(startProcessInstance.getId())
-		             .activityId("receivetask2")////当前活动的id，对应receiveTask.bpmn文件中的活动节点id的属性值
+		             .activityId("receivetask2")//当前活动的id，对应receiveTask.bpmn文件中的活动节点id的属性值
 		             .singleResult();
 		/**从流程变量中获取汇总当日销售额的值*/
 		Integer value = (Integer)processEngine.getRuntimeService()//
